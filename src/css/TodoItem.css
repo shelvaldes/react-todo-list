@@ -1,0 +1,48 @@
+.todo--item-card {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    background-color: white;
+    padding: 16px;
+    width: 100%;
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.todo--item-card li {
+    display: flex;
+    flex-direction: row;
+}
+
+.todo--item-card li p {
+    width: 100%;
+    line-height: 16px;
+}
+
+.x-icon {
+    background-image: url(../img/dump.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 32px;
+    width: 32px;
+    position: relative;
+    margin-top: -8px;
+    margin-right: -10px;
+}
+
+.checkmark {
+    margin-right: 8px;
+}
+
+.icon-check--active {
+    fill: rgb(226, 43, 134);
+    display: block;
+
+}
+
+.icon-check--inactive {}
+
+
+.todo-item--complete {
+    text-decoration-line: line-through;
+    color: #CCA2B7;
+}

@@ -1,0 +1,18 @@
+.add-button{
+    width: 100%;
+    padding: 2px 8px;
+    border-radius: 16px;
+    font-size: 40px;
+    background: #E22B86;
+    border-style: solid;
+    border-color: rgb(55, 56, 66);
+    color: aliceblue;
+    border-width: 4px;
+    margin-top: 8px;
+}
+
+.add-button:focus{
+    
+    border-color: #ac1a63;
+    border-style: solid;
+}

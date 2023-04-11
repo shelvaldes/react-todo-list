@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@700&display=swap');
+
+*{
+  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #373842;
+  background-color: #F3EFF2;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
