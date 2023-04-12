@@ -33,6 +33,32 @@ function App(props) {
     })    
   }
 
+  const completeTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text);
+
+    const newTodos = [...todos];
+    newTodos[todoIndex].completed = true;
+    // es lo mismo que
+    //todos[todoIndex] = {
+    //   text: todos[todoIndex].text,
+    //   completed: true,
+    // }
+    setTodos(newTodos);
+  }
+
+  const deleteTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text);
+
+    const newTodos = [...todos];
+    newTodos.splice(todoIndex, 1);
+    // es lo mismo que
+    //todos[todoIndex] = {
+    //   text: todos[todoIndex].text,
+    //   completed: true,
+    // }
+    setTodos(newTodos);
+  }
+
   return (
     <div className="container">
      <TodoCounter 
@@ -52,6 +78,8 @@ function App(props) {
             key={todo.text} 
             text={todo.text}
             completed={todo.completed}
+            onComplete= {()=> completeTodo(todo.text)}
+            onDelete= {()=> deleteTodo(todo.text)}
           />
         ))}
      <CreateTodoButton /> 

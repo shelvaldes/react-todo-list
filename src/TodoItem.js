@@ -4,19 +4,15 @@ import {ReactComponent as CheckmarkActive} from './img/check-active.svg';
 import {ReactComponent as CheckmarkInactive} from './img/check-inactive.svg';
 
 function TodoItem(props) {
-    const onComplete = () => {
-        alert('Completaste ' + props.text);
-    }
-    const onDelete = () => {
-        alert('Borraste ' + props.text);
-    }
+    
+    
 
     return (
         <div className="todo--item-card">
             <li>
                 <span 
                     className="checkmark"
-                    onClick={onComplete}
+                    onClick={props.onComplete}
                 >
                     {props.completed ? (
                             <CheckmarkActive className="icon-check--active" />
@@ -28,7 +24,7 @@ function TodoItem(props) {
                 <p className={`${props.completed && 'todo-item--complete'}`}>{props.text}</p>
                 <span 
                     className="x-icon"
-                    onClick={onDelete}
+                    onClick={props.onDelete}
                 />
             </li>
         </div>
