@@ -8,27 +8,32 @@ import { CreateTodoButton } from "./CreateTodoButton";
 import './css/App.css';
 
 function AppUI({
-    totalTodos,
-    completedTodos,
-    searchValue,
-    setSearchValue,
-    searchedTodos,
-    completeTodo,
-    deleteTodo,
-  }){
-    return(
-        <div className="container">
-     <TodoCounter 
+  loading,
+  error,
+  totalTodos,
+  completedTodos,
+  searchValue,
+  setSearchValue,
+  searchedTodos,
+  completeTodo,
+  deleteTodo,
+}){
+  return(
+    <div className="container">
+      <TodoCounter 
       total={totalTodos}
       completed = {completedTodos}
-     />
-     
-     <TodoSearch 
+      />
+      
+      <TodoSearch 
       searchValue={searchValue}
       setSearchValue={setSearchValue}
-     />
-     
-     <TodoList>
+      />
+      
+      <TodoList>
+        {error && <p>Hubo un error</p>}
+        {loading && <p>Estamos cargando</p>}
+        {(!loading && !searchedTodos.length) && <p>Crea tu primer Todo</p>}
       
         {searchedTodos.map(todo => (
           <TodoItem 
@@ -39,12 +44,11 @@ function AppUI({
             onDelete= {()=> deleteTodo(todo.text)}
           />
         ))}
-     <CreateTodoButton /> 
-     </TodoList>
-    
-     
-     </div>
-    );
+        <CreateTodoButton /> 
+      </TodoList>
+  
+    </div>
+  );
 }
 
 export { AppUI };
